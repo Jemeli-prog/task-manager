@@ -1,7 +1,10 @@
 from django.urls import path
-from . import views
-
+from .views import DutyListCreate,DutyDetail
 
 urlpatterns = [
-    path('', views.index, name='index')
+    path('duty/', DutyListCreate.as_view(),name='duty-list-create'),
+    path('duty/<int:pk>/', DutyDetail.as_view(), name='duty-detail'),
+
 ]
+    
+
